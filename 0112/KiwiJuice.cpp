@@ -6,7 +6,6 @@ vector<int> solution(vector<int> capacities, vector<int> bottles, vector<int> fr
     for (int i = 0; i < toId.size(); i++) {
         // 경우의 수 물을 채울때 toId의 양이 넘칠때
         // 넘친경우 -> bottles[toId]+(capcities[toId]-bottles[toId]),from은 -임
-
         // 안넘칠때 -> bottles[fromId]-bottles[fromId],bottles[toId]+bottles[fromId]
         // 결국 bottles[fromId]랑 toId의 남은 공간 중 min 값을 -+ 해주면 된다.
         int vol = min(capacities[toId[i]] - bottles[toId[i]], bottles[fromId[i]]);
